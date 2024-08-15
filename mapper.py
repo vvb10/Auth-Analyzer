@@ -3,6 +3,7 @@ from tqdm import tqdm
 from time import sleep
 from requests import get
 from scp import SCPClient
+from getpass import getpass
 from datetime import datetime
 from folium import Map, Circle
 from paramiko import SSHClient, AutoAddPolicy
@@ -163,8 +164,8 @@ def main():
     if choice == 1:
         hostname = input("hostname: ")
         username = input("username: ")
-        password = input("password: ")
-        sudo_password = input("sudo password: ")
+        password = getpass("password: ")
+        sudo_password = getpass("sudo password: ")
 
         key_file = input("path to keyfile (enter to skip): ")
 
